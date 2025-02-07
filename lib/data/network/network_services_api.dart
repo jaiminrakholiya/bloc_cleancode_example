@@ -6,7 +6,7 @@ import 'package:bloc_cleancode_example/data/exceptions/app_exceptions.dart';
 import 'package:bloc_cleancode_example/data/network/base_api_services.dart';
 import 'package:http/http.dart' as http;
 
-class NetworkServicesApi implements BaseApiServices {
+class   NetworkServicesApi implements BaseApiServices {
 
   ///get api
   @override
@@ -61,7 +61,7 @@ class NetworkServicesApi implements BaseApiServices {
   }
 
   dynamic returnResponse(http.Response response) {
-    switch (response) {
+    switch (response.statusCode) {
       case 200:
         dynamic jsonResponse = jsonDecode(response.body);
         return jsonResponse;
